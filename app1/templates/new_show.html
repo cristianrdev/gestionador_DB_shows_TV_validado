@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Nuevo Show</title>
+</head>
+
+<body>
+    <div class="container m-5">
+        <a href="/shows">Ir atrás</a>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h2>Añadir Nuevo Show</h2>
+            <h4>Título</h4>
+            <input type="" name="titulo">
+            <h4>Cadena de Televisión</h4>
+            <input type="" name="cadena">
+            <h4>Fecha lanzamiento</h4>
+            <input type="date" name="fecha_lanz">
+            <h4>Descripción</h4>
+            <input type="" name="descripcion">
+
+            <input type="hidden" name="nuevo" value="True" />
+            <button type="submit">Añadir Nuevo Show</button>
+
+        </form>
+
+        {% if messages %}
+        <ul class="text-danger">
+            {% for m in messages %}
+            <li> {{m}} </li>
+            {% endfor %}
+        </ul>
+        {% endif%}
+
+
+
+    </div>
+</body>
+
+</html>
